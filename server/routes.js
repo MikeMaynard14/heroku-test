@@ -216,6 +216,10 @@ router.patch('/api/updatepass/:id', async (req, res) =>{
     }
 });
 
+router.get('/api/tester', (req, res) =>{
+    res.json("This hit the server");
+});
+
 
 
 
