@@ -31,7 +31,7 @@ const addUser = (e) => {
   console.log(payload);
   
 
-  Axios.post('http://localhost:5000/api/newUser', payload)
+  Axios.post('/api/newUser', payload)
   .then((res)=> {
     if(res){
       console.log("User Added"); 
