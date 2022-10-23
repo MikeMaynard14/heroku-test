@@ -130,6 +130,8 @@ router.patch('/api/validate/:id', async (req, res) => {
 
 router.post('/api/resetpass', async (req, res) => {
 
+    req.json("User Reg Path")
+
     const findUser = await addUser.findOne({
         email: req.body.email
     });
