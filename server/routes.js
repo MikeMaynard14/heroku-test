@@ -6,11 +6,13 @@ const addUser = require('./models/addUser');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+router.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/index.html'));
+});
+
 router.post('/api/newUser', (req, res) =>{
 
     let data = req.body;
-
-    res.json("This is the correct route");
 
     const regUser = new newUser({
         first: data.first,
@@ -29,7 +31,7 @@ router.post('/api/newUser', (req, res) =>{
             username: req.body.username
         });
 
-        let userIdLink = "http://localhost:3000/auth?id=" + findUser._id;
+        let userIdLink = "https://flopshop.herokuapp.com//auth?id=" + findUser._id;
       
         // Send confirmation email has moved here to only run on successful add
         const mailerOutput = `
