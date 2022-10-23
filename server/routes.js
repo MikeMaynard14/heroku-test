@@ -10,6 +10,8 @@ router.post('/api/newUser', (req, res) =>{
 
     let data = req.body;
 
+    res.json("This is the correct route");
+
     const regUser = new newUser({
         first: data.first,
         last: data.last,
